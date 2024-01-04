@@ -14,20 +14,36 @@ fn bench_to_owned(c: &mut Criterion) {
     let src = binding.as_str();
     let mut dst = String::new();
     c.bench_function("to_owned 8", |b| b.iter(|| str_to_owned(black_box(&src), &mut dst)));
+    let binding = get_random_string(16);
+    let src = binding.as_str();
     c.bench_function("to_owned 16", |b| b.iter(|| str_to_owned(black_box(&src), &mut dst)));
+    let binding = get_random_string(32);
+    let src = binding.as_str();
     c.bench_function("to_owned 32", |b| b.iter(|| str_to_owned(black_box(&src), &mut dst)));
+    let binding = get_random_string(64);
+    let src = binding.as_str();
     c.bench_function("to_owned 64", |b| b.iter(|| str_to_owned(black_box(&src), &mut dst)));
+    let binding = get_random_string(128);
+    let src = binding.as_str();
     c.bench_function("to_owned 128", |b| b.iter(|| str_to_owned(black_box(&src), &mut dst)));
 }
 
 fn bench_to_string(c: &mut Criterion) {
-    let binding = get_random_string(16);
+    let binding = get_random_string(8);
     let src = binding.as_str();
     let mut dst = String::new();
     c.bench_function("to_string 8", |b| b.iter(|| str_to_string(black_box(&src), &mut dst)));
+    let binding = get_random_string(16);
+    let src = binding.as_str();
     c.bench_function("to_string 16", |b| b.iter(|| str_to_string(black_box(&src), &mut dst)));
+    let binding = get_random_string(32);
+    let src = binding.as_str();
     c.bench_function("to_string 32", |b| b.iter(|| str_to_string(black_box(&src), &mut dst)));
+    let binding = get_random_string(64);
+    let src = binding.as_str();
     c.bench_function("to_string 64", |b| b.iter(|| str_to_string(black_box(&src), &mut dst)));
+    let binding = get_random_string(128);
+    let src = binding.as_str();
     c.bench_function("to_string 128", |b| b.iter(|| str_to_string(black_box(&src), &mut dst)));
 }
 
