@@ -8,8 +8,13 @@ edition = "2021"
 name = "bench"
 harness = false
 
+[[bench]]
+name = "iai"
+harness = false
+
 [dependencies]
 rand = "0.8.5"
 
 [dev-dependencies]
 criterion = "0.5.1"
+iai = "0.1.1"
